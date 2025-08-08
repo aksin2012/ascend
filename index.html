@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>AI Persona Selection</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <style type="text/tailwindcss">
+        :root {
+            --primary-color: #0c7ff2;
+            --secondary-color: #e0f2f7;
+            --background-color: #f9f9f9;
+            --text-primary: #111827;
+            --text-secondary: #6b7280;
+            --accent-color: #bfdbfe;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-primary);
+        }
+
+        .button_primary {
+            @apply bg-[var(--primary-color)] text-white rounded-md px-4 py-2 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50;
+        }
+
+        .button_secondary {
+            @apply bg-[var(--secondary-color)] text-[var(--primary-color)] rounded-md px-4 py-2 hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50;
+        }
+
+        .card {
+            @apply bg-white rounded-lg shadow-md p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+        }
+
+        .typography_h1 {
+            @apply text-3xl font-bold text-[var(--text-primary)];
+        }
+
+        .typography_h2 {
+            @apply text-xl font-semibold text-[var(--text-primary)];
+        }
+
+        .typography_body {
+            @apply text-base text-[var(--text-secondary)];
+        }
+    </style>
+</head>
+
+<body>
+<div class="relative flex w-screen max-w-none min-h-screen flex-col bg-[var(--background-color)] group/design-root overflow-x-hidden">
+    <div class="flex h-full w-full flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 px-10 py-4">
+            <div class="flex items-center gap-4 text-[var(--text-primary)]">
+                <div class="text-[var(--primary-color)]">
+                    <svg width="200" height="60" viewBox="0 0 220 80" xmlns="http://www.w3.org/2000/svg" fill="none">
+                        <rect width="220" height="80" fill=""/>
+
+                        <!-- Back Chat Bubble -->
+                        <path d="M36 20h32c2.2 0 4 1.8 4 4v16c0 2.2-1.8 4-4 4H50l-6 6v-6H36c-2.2 0-4-1.8-4-4V24c0-2.2 1.8-4 4-4z" fill="#1A4D72"/>
+
+                        <!-- Front Chat Bubble -->
+                        <path d="M20 26h32c2.2 0 4 1.8 4 4v16c0 2.2-1.8 4-4 4H34l-6 6v-6H20c-2.2 0-4-1.8-4-4V30c0-2.2 1.8-4 4-4z" fill="#3DAAFF"/>
+
+                        <!-- Brand Text -->
+                        <text x="80" y="53" font-family="'Inter', sans-serif" font-size="32" fill="#0A1E33" font-weight="600">Simu</text>
+                    </svg>
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <div
+                        class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAXKKvQaVBnw8cXN_tv8OXb2PFlmF0el1Srh5jsOl1JcPTNzeAAoNjMMRC3mB-q3Oif44Yu80fs4j2fxJ2ODZ1ARy2DKFz_4aVU9eO_89b-omU6Q3ybjE0V6hm7FPXom1cBC4nCJSPxP8U-LIhjEG-cE6hIHeZ9X5uO3DqTXQyHCFj8AwxYcE_eeFPXkEjnFhJCZfdca-p_PAXZDWJiWkvoGD31UWqGwwmolqG6kfFBGgmyJ5hswveddwga3CHeQbEhy_dfqUhLebY");'
+                ></div>
+            </div>
+        </header>
+    </div>
+    <main class="flex-1 pt-4 pb-6 px-4 sm:px-6 lg:px-4 xl:px-2 w-full">
+        <div class="max-w-screen-2xl mx-auto w-full">
+            <div id="root"></div>
+        </div>
+    </main>
+</div>
+<script type="module" src="/src/main.tsx"></script>
+</body>
+</html>
